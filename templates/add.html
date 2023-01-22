@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Add user{% endblock %}
+{%block content%}
+<div class="container">
+    <form action="{{url_for('addprsn_submit')}}" method="POST">
+        <input type="hidden" name="txtnbr" value="{{newnbr}}">
+        <div class="form-group">
+            <label>Prenom</label>
+            <input  type="text" name="txtname" class="form-control" id="exampleFormControlInput1"
+                placeholder="Enter Prenom">
+        </div>
+        <div class="form-group">
+            <label>Role</label>
+            <input type="text" name="optskill" class="form-control" id="exampleFormControlInput1"
+                placeholder="Enter Role">
+        </div>
+        <!-- <div class="form-group">
+            <label>Telephone</label>
+            <input name="telephone" type="text" class="form-control"
+                id="exampleFormControlInput1" placeholder="Enter Phone Number">
+        </div> -->
+        <button type="submit" class="btn btn-success mb-2">Enregistrer</button>
+    </form>
+
+</div>
+
+    {% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Users{% endblock %}
+{%block content%}
+<div class="container-fluid">
+    <br>
+    <div class="row">
+        <div class="col sm-4">
+            <strong>
+                <p>Listes des utilisateurs
+                </p>
+            </strong>
+        </div>
+        <div class="col sm-4">
+            <a class="btn btn-success btn-sm float-right" href="/addprsn"><i
+                    class="fas fa-user"> ajouter un utilisateur</i></a>
+        </div>
+        <div class="col sm-4">
+            <a class="btn btn-primary btn-sm float-right" href="/fr_page"><i
+                    class="fas fa-user"> Verification</i></a>
+        </div>
+    </div><br>
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="th-sm">Identifiant utilisateur</th>
+                <th class="th-sm">prenom et Nom</th>
+                <th class="th-sm">Fonction</th>
+                <th class="th-sm">Present</th>
+                <th class="th-sm">Date</th>
+                <!-- <th class="th-sm">Adresse</th>
+                <th class="th-sm">email</th>
+                <th class="th-sm">Action</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in data %}
+            <tr>
+                <td>{{user.0}}</td>
+                <td>{{user.1}}</td>
+                <td>{{user.2}}</td>
+                <td>{{user.3}}</td>
+                <td>{{user.4}}</td>
+            </tr>
+
+            {%endfor%}
+        </tbody>
+        </tr>
+    </table>
+</div>
+{%endblock %}
